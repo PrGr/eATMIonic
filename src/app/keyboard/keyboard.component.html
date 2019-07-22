@@ -1,0 +1,76 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div *ngIf="masked" class="ion-text-center">
+          <ion-icon *ngFor="let d of digits" name="medical" size="large"></ion-icon>
+        </div>
+        <div *ngIf="!masked" class="ion-text-center">
+            {{ pin }}
+          </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col offsetLg="4" offsetMd="2" sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button size="large" expand="block" (click)=DigitClicked(1)>1</ion-button>
+      </ion-col>
+      <ion-col sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button size="large" expand="block" (click)=DigitClicked(2)>2</ion-button>
+      </ion-col>
+      <ion-col sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button size="large" expand="block" (click)=DigitClicked(3)>3</ion-button>
+      </ion-col>
+      <ion-col sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button [disabled]="!cancelEnabled" size="large" expand="block" color="danger" (click)="rejectCard()">
+            <ion-icon name="close-circle"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col offsetLg="4" offsetMd="2" sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button size="large" expand="block" (click)=DigitClicked(4)>4</ion-button>
+      </ion-col>
+      <ion-col sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button size="large" expand="block" (click)=DigitClicked(5)>5</ion-button>
+      </ion-col>
+      <ion-col sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button size="large" expand="block" (click)=DigitClicked(6)>6</ion-button>
+      </ion-col>
+      <ion-col sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button [disabled]="!clearEnabled" size="large" expand="block" color="warning" (click)="Backspace()">
+            <ion-icon name="backspace"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col offsetLg="4" offsetMd="2" sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button size="large" expand="block" (click)=DigitClicked(7)>7</ion-button>
+      </ion-col>
+      <ion-col sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button size="large" expand="block" (click)=DigitClicked(8)>8</ion-button>
+      </ion-col>
+      <ion-col sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button size="large" expand="block" (click)=DigitClicked(9)>9</ion-button>
+      </ion-col>
+      <ion-col sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button [disabled]="!enterEnabled" size="large" expand="block" color="success" (click)="onEnter()">
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col offsetLg="4" offsetMd="2" sizeLg="1" sizeMd="2" sizeXs="3">
+        <!-- <ion-button size="large" expand="block"></ion-button> -->
+      </ion-col>
+      <ion-col sizeLg="1" sizeMd="2" sizeXs="3">
+        <ion-button size="large" expand="block" (click)=DigitClicked(0)>0</ion-button>
+      </ion-col>
+      <ion-col sizeLg="1" sizeMd="2" sizeXs="3">
+        <!-- <ion-button size="large" expand="block"></ion-button> -->
+      </ion-col>
+      <ion-col sizeLg="1" sizeMd="2" sizeXs="3">
+        <!-- <ion-button size="large" expand="block"></ion-button> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

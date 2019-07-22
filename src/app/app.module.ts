@@ -8,11 +8,17 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { KeyboardComponent } from './keyboard/keyboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MainMenuComponent } from './main-menu/main-menu.component';
+import { CashWithdrawComponent } from './cash-withdraw/cash-withdraw.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginComponent, KeyboardComponent, MainMenuComponent, CashWithdrawComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,

@@ -1,0 +1,13 @@
+<ion-content>
+  <ion-item>
+    <ion-label>Card Number:</ion-label>
+    <ion-select [(ngModel)]="cardNumber" [disabled]="cardInserted" placeholder="Insert your card">
+      <ion-select-option *ngFor="let creditCard of creditCards" value="{{ creditCard.number }}">
+        {{creditCard.user}} {{creditCard.number}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <app-keyboard *ngIf="cardInserted" (cancel)="rejectCard()" (enter)="login($event)"></app-keyboard>
+
+</ion-content>

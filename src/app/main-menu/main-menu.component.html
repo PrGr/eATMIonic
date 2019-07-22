@@ -1,0 +1,21 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeLg="4" sizeMd="6" sizeXs="12">
+        <ion-button size="large" expand="block" (click)=cashWithdraw()>Cash Withdrawal</ion-button>
+      </ion-col>
+      <ion-col sizeLg="4" sizeMd="6" sizeXs="12">
+        <ion-button size="large" expand="block" (click)=transactions()>View Transactions</ion-button>
+      </ion-col>
+      <ion-col *ngIf="appState.isAdmin" sizeLg="4" sizeMd="6" sizeXs="12">
+        <ion-button size="large" expand="block" (click)=showAtmBalance()>ATM Balance</ion-button>
+      </ion-col>
+      <ion-col sizeLg="4" sizeMd="6" sizeXs="12">
+        <ion-button size="large" expand="block" (click)=showBalance(3)>View Balance</ion-button>
+      </ion-col>
+      <ion-col sizeLg="4" sizeMd="6" sizeXs="12">
+        <ion-button size="large" expand="block" (click)=logout()>Logout</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

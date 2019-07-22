@@ -1,0 +1,16 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeLg="4" sizeMd="6" sizeXs="12">
+        <ion-label size="large" expand="block">Enter amount:</ion-label>
+      </ion-col>
+      <ion-col sizeLg="4" sizeMd="6" sizeXs="12">
+        <ion-input size="large" expand="block">{{ amount }}</ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-keyboard [masked]="false" [MinPinLength]="2" (enter)="withdraw($event)"></app-keyboard>
+
+</ion-content>
+
